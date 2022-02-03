@@ -1,5 +1,6 @@
 package com.webservice.springboot.domain.posts;
 
+import com.webservice.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,7 +10,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity // 테이블을 뜻하는 어노테이션
-public class Posts {
+public class Posts  extends BaseTimeEntity {
 
     @Id // pk를 뜻하는 어노테이션
     @GeneratedValue(strategy = GenerationType.IDENTITY) // pk의 생성 규칙, GenerationType.IDENTITY가 있어야 자동증가가 됨
