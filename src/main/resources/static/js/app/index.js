@@ -8,8 +8,8 @@ var main = {
             _this.update();
         })
         $("#btn-delete").on("click", function() {
-                    _this.delete();
-                })
+            _this.delete();
+        });
     },
     save: function() {
         var data = {
@@ -53,7 +53,7 @@ var main = {
         });
     },
     delete: function() {
-        var id = $("id").val();
+        var id = $("#id").val();
 
         $.ajax({
             type: "DELETE",
