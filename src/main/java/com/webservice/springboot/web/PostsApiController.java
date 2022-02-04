@@ -7,6 +7,10 @@ import com.webservice.springboot.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * Post Entity에 대한 요청을 처리하는 컨트롤러
+ * */
+
 @RequiredArgsConstructor
 @RestController
 public class PostsApiController {
@@ -26,5 +30,11 @@ public class PostsApiController {
     @GetMapping("/api/v1/posts/{id}")
     public PostsResponseDto findById(@PathVariable Long id) {
         return postsService.findById(id);
+    }
+
+    @GetMapping("api/v1/posts/{id}")
+    public Long delete(@PathVariable Long id) {
+        postsService.delete(id);
+        return id;
     }
 }
